@@ -38,7 +38,7 @@ class PersonStorage {
 }
 exports.PersonStorage = PersonStorage;
 exports.storage = new PersonStorage;
-const port = 8010;
+const port = process.env.PORT||8010;
 const server = restify_1.createServer();
 server.use(restify_1.plugins.bodyParser());
 server.post("/contacts", contract_post_1.contractDoPost);
